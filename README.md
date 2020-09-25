@@ -1,3 +1,9 @@
+打包发布时，俩个注意点：
+1.main.js中的base_url改成线上的
+2.config/index.js的assetsPublicPath需要加个.    assetsPublicPath: './',
+
+
+
 # project
 
 > A Vue.js project
