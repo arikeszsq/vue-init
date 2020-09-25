@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 //mobile
 import Index from '@/views/mobile/index.vue';
 import Leader from '@/views/mobile/leader.vue';
+import List from '@/views/mobile/list.vue';
 
 Vue.use(Router)
 
@@ -17,6 +18,12 @@ const routes = [
         path: '/',
         name: 'index',
         component: Index
+    },
+
+    {
+        path: '/list',
+        name: 'list',
+        component: List
     },
 
     {

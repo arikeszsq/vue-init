@@ -10,6 +10,9 @@
   <van-tabbar-item replace to="/leader" icon="search">
     导航页
   </van-tabbar-item>
+    <van-tabbar-item replace to="/list" icon="chat-o">
+    列表
+  </van-tabbar-item>
 </van-tabbar>
   </div>
 </template>

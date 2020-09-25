@@ -1,15 +1,23 @@
-
 <template>
   <div>
-    
-
-
-<van-swipe :loop="true" :width="300" :height="100">
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+  <van-swipe-item>L</van-swipe-item>
+  <van-swipe-item>O</van-swipe-item>
+  <van-swipe-item>V</van-swipe-item>
+  <van-swipe-item>E</van-swipe-item>
+</van-swipe>
+<!-- <van-swipe :loop="true" :width="300" :height="100">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-</van-swipe>
+</van-swipe> -->
+
+<!-- <van-swipe :autoplay="3000">
+  <van-swipe-item v-for="(image, index) in images" :key="index">
+    <img v-lazy="image" />
+  </van-swipe-item>
+</van-swipe> -->
 
 <van-radio-group v-model="params.type">
   <van-cell-group>
@@ -50,10 +58,9 @@
   <van-switch v-model="params.needed" active-color="#07c160" inactive-color="#ee0a24" />
 </van-cell>
 
-<div style="text-align:center;margin-top:5px;">
+<div style="text-align:center;margin-top:5px;margin-right:10px;">
   <van-button round type="info" @click="SubBtn();">提交</van-button>
 </div>
-
 
   </div>
 </template>
@@ -61,35 +68,45 @@
 
 
 <script>
+import { Dialog } from 'vant';
+
+
 export default {
   data() {
     return {
+      images: [
+        '../../assets/img/123.png',
+      ],
       params:{
         type: '1',
         num: '',
         needed: true,
         content:'',
-      }
+      },
     };
   },
   computed:{},
   methods:{
-    　　SubBtn:function(msg){
-           　　var data = this.params
-              //  this.$http.get(('http://127.0.0.1:666/api/money/add'),data,{emulateJSON:false}).then(response => {
-              //       // success callback
-              //  }, response => {
-              //       // error callback
-              //  });
-
-              axios.get('http://127.0.0.1:666/api/money/add').then(function (response) {
-                  console.log(response);
-                  }).catch(function (error) {
-                          console.log(error);
-                  });
+    　　SubBtn:function(){
+           this.axios.post("http://zhusq.local/api/vue/money/add", this.params).then(function(res) {
+             console.log(res.data);
+             Dialog({ message: '恭喜您</br>数据添加成功！' });
+           }).catch(function(err) {
+              console.log(err)
+           });
         },
   },
   mounted:function(){},
   created(){},
   }
 </script>
+
+<style>
+  .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #39a9ed;
+  }
+</style>
