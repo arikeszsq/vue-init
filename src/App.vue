@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-        <div>
-//router-link定义页面中点击触发部分　　
-      <router-link to="/page1">Page1</router-link>
-    </div>
+
+
     <router-view/>
+    <van-tabbar route>
+  <van-tabbar-item replace to="/" icon="home-o">
+    主页
+  </van-tabbar-item>
+  <van-tabbar-item replace to="/leader" icon="search">
+    导航页
+  </van-tabbar-item>
+</van-tabbar>
   </div>
 </template>
 
@@ -20,8 +25,8 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 </style>
