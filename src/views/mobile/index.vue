@@ -88,7 +88,7 @@ export default {
   computed:{},
   methods:{
     　　SubBtn:function(){
-           this.axios.post("http://zhusq.local/api/vue/money/add", this.params).then(function(res) {
+           this.axios.post("/money/add", this.params).then(function(res) {
              console.log(res.data);
              Dialog({ message: '恭喜您</br>数据添加成功！' });
            }).catch(function(err) {
