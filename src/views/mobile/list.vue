@@ -27,7 +27,7 @@ export default {
   computed:{},
   methods:{
     　　SubBtn:function(){
-           this.axios.post("http://zhusq.local/api/vue/money/add", this.params).then(function(res) {
+           this.axios.post("/money/add", this.params).then(function(res) {
              console.log(res.data);
              Dialog({ message: '恭喜您</br>数据添加成功！' });
            }).catch(function(err) {
@@ -37,7 +37,7 @@ export default {
         
         onLoad() {
           let that = this;
-this.axios.get("http://zhusq.local/api/vue/money/list").then(function(res) {
+this.axios.get("/money/list").then(function(res) {
              console.log(res.data.list)
              that.list=res.data.list;
            }).catch(function(err) {
