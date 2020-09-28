@@ -1,10 +1,13 @@
 <template>
   <div>
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-  <van-swipe-item>L</van-swipe-item>
-  <van-swipe-item>O</van-swipe-item>
-  <van-swipe-item>V</van-swipe-item>
-  <van-swipe-item>E</van-swipe-item>
+    
+  
+  
+  <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+    <van-swipe-item><img src="../../assets/img/1.jpg" alt=""></van-swipe-item>
+    <van-swipe-item><img src="../../assets/img/2.jpg" alt=""></van-swipe-item>
+    <van-swipe-item><img src="../../assets/img/3.jpg" alt=""></van-swipe-item>
+    <van-swipe-item><img src="../../assets/img/4.jpg" alt=""></van-swipe-item>
 </van-swipe>
 <!-- <van-swipe :loop="true" :width="300" :height="100">
   <van-swipe-item>1</van-swipe-item>
@@ -103,9 +106,9 @@ export default {
 
 <style>
   .my-swipe .van-swipe-item {
+    max-height: 180px;
     color: #fff;
     font-size: 20px;
-    line-height: 150px;
     text-align: center;
     background-color: #39a9ed;
   }
