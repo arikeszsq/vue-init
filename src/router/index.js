@@ -5,6 +5,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '@/views/mobile/index.vue';
 import Leader from '@/views/mobile/leader.vue';
 import List from '@/views/mobile/list.vue';
+import Upload from '@/views/mobile/upload.vue';
+import Count from '@/views/mobile/count.vue';
 
 Vue.use(Router)
 
@@ -19,7 +21,11 @@ const routes = [
         name: 'index',
         component: Index
     },
-
+    {
+        path: '/upload',
+        name: 'upload',
+        component: Upload
+    },
     {
         path: '/list',
         name: 'list',
@@ -30,6 +36,12 @@ const routes = [
         path: '/leader',
         name: 'leader',
         component: Leader
+    },
+
+    {
+        path: '/count',
+        name: 'count',
+        component: Count
     },
 
 ]
