@@ -7,19 +7,16 @@
   </template>
 </van-nav-bar>
 
-<van-circle v-model="currentRate" :rate="60" :speed="100" :text="text" />
-
-<!-- 居中 -->
-<van-row type="flex" justify="center">
-  <van-col span="6">总计: {{total}}</van-col>
-  <van-col span="6">园区: {{sip}}</van-col>
-  <van-col span="6">市区: {{center}}</van-col>
-</van-row>
-
-<!-- 居中 -->
-<van-row type="flex" justify="center">
-  <van-col span="6">本月:  {{consume_money}}</van-col>
-</van-row>
+<table border="0"  cellspacing="1" bgcolor="#1989fa" class="table_class">
+  <tr>
+    <td>项目名称</td>
+    <td>统计</td>
+  </tr>
+  <tr v-for="(item,key,index) in items" :key="index">
+    <td>{{item.name}}</td>
+    <td>{{item.value}} 元</td>
+  </tr>
+</table>
 
   </div>
 </template>   
@@ -29,11 +26,11 @@ import { Dialog } from 'vant';
 export default {
   data() {
     return {
-      currentRate: 0,
-      total:0,
-      center:0,
-      sip:0,
-      consume_money:0
+      items:[
+        // {'name':'test','value':132},
+        // {'name':'asdf','value':56},
+        // {'name':'asdfsdfsd','value':858},
+      ]
     };
   },
 
@@ -41,26 +38,15 @@ export default {
     alertWelcome:function(){
      Dialog({ message: 'welcome brother' });
     },
-    prfCount:function(){
-      // this.axios.post("/money/add", this.params).then(function(res) {
-      //        console.log(res.data);
-      //        Dialog({ message: '恭喜您</br>数据添加成功！' });
-      //      }).catch(function(err) {
-      //         console.log(err)
-      //      });
+    countList:function(){
       let that = this;
       this.axios.get("basic/info").then(function(res){
-        that.total = res.data.data.total_money;
-        that.center = res.data.data.center_money;
-        that.sip = res.data.data.sip_money;
-        that.consume_money = res.data.data.consume_money;
+        console.log(res.data.data)
+        that.items = res.data.data;
       }).catch(function(res){
-       console.log(2222);
         console.log(res);
       })
-
     }
-
   },
   computed: {
     text() {
@@ -68,7 +54,33 @@ export default {
     },
   },
   mounted:function(){
-    this.prfCount();
+    this.countList();
   }
 }
 </script>
+
+<style>
+.table_class{
+  min-width: 260px;
+  margin: 0 auto;
+}
+
+.table_class tr td{
+  background-color: whitesmoke;
+  padding: 4px;
+}
+
+.table_class td{
+  font-size: 14px;
+  text-align: center;
+}
+
+.table_class td:first-child{
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 10px;
+}
+.table_class tr:first-child td{
+    background-color: rgb(177, 157, 157);
+}
+</style>
