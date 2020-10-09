@@ -9,6 +9,8 @@ import Upload from '@/views/mobile/upload.vue';
 import Count from '@/views/mobile/count.vue';
 import Add from '@/views/mobile/add.vue';
 import Learn from '@/views/mobile/learn.vue';
+import Alladd from '@/views/mobile/all/add.vue';
+import Alllist from '@/views/mobile/all/list.vue';
 Vue.use(Router)
 
 const routes = [
@@ -51,6 +53,16 @@ const routes = [
         path: '/learn',
         name: 'learn',
         component: Learn
+    },
+    {
+        path: '/alladd',
+        name: 'alladd',
+        component: Alladd
+    },
+    {
+        path: '/alllist',
+        name: 'alllist',
+        component: Alllist
     },
 ]
 const router = new Router({
