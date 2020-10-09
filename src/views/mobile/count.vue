@@ -7,7 +7,7 @@
   </template>
 </van-nav-bar>
 
-<table border="0"  cellspacing="1" bgcolor="#1989fa" class="table_class">
+<table border="0"  cellspacing="1" class="table_class">
   <tr>
     <td>项目名称</td>
     <td>统计</td>
