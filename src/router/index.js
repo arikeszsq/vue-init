@@ -11,6 +11,7 @@ import Add from '@/views/mobile/add.vue';
 import Learn from '@/views/mobile/learn.vue';
 import Alladd from '@/views/mobile/all/add.vue';
 import Alllist from '@/views/mobile/all/list.vue';
+import Beauty from '@/views/mobile/beauty.vue';
 Vue.use(Router)
 
 const routes = [
@@ -19,11 +20,18 @@ const routes = [
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // },
+    // {
+    //     path: '/',
+    //     name: 'index',
+    //     component: Index
+    // },
+
     {
-        path: '/',
-        name: 'index',
+        path: '/out',
+        name: 'out',
         component: Index
     },
+
     {
         path: '/upload',
         name: 'upload',
@@ -38,6 +46,11 @@ const routes = [
         path: '/add',
         name: 'add',
         component: Add
+    },
+    {
+        path: '/',
+        name: 'leader',
+        component: Leader
     },
     {
         path: '/leader',
@@ -63,6 +76,11 @@ const routes = [
         path: '/alllist',
         name: 'alllist',
         component: Alllist
+    },
+    {
+        path: '/beauty',
+        name: 'beauty',
+        component: Beauty
     },
 ]
 const router = new Router({

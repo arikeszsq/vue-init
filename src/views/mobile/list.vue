@@ -13,7 +13,7 @@
     <li class="header_li" :class="{'active':active_2}" @click="onLoad('salary')">salary</li>
   </ul>
 </div>
-<div style="margin:0 auto;text-align:center;" :show=total>{{total}}</div>
+<div class="total" :show=total>统计数据： {{total}}</div>
 <table border="0"  cellspacing="1" bgcolor="#1989fa" class="table_class">
   <tr v-for="(item,key,index) in items" :key="index" >
     <template v-if="item.num">
@@ -92,9 +92,18 @@ export default {
 </script>
 
 <style>
+.total{
+  min-height: 25px;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 25px;
+  background-color: beige;
+  text-align: center;
+}
 .table_class{
-  min-width: 260px;
+  width: 100%;
   margin: 0 auto;
+  margin-top: 2px;
 }
 
 .table_class tr td{
@@ -116,19 +125,19 @@ export default {
 }
 
 .header{
-  text-align:center;
-  margin-top: 20px;
-  min-height: 50px;
+  width: 100%;
+  min-height: 31px;
 }
 
 .header_li{
   background-color: bisque;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  min-width: 50px;
+  min-width: 80px;
   float: left;
+  min-height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bolder;
 }
 .active{
   background-color:red;

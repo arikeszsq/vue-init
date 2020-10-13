@@ -4,13 +4,13 @@
     <router-view/>
     
 <van-tabbar route>
+  <van-tabbar-item replace to="/beauty" icon="like-o">
+    呵呵
+  </van-tabbar-item>
   <van-tabbar-item replace to="/" icon="home-o">
     主页
   </van-tabbar-item>
-  <van-tabbar-item replace to="/leader" icon="search">
-    导航页
-  </van-tabbar-item>
-    <van-tabbar-item replace to="/list" icon="chat-o">
+    <van-tabbar-item replace to="/list" icon="bars">
     列表
   </van-tabbar-item>
 </van-tabbar>

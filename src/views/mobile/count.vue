@@ -14,7 +14,7 @@
   </tr>
   <tr v-for="(item,key,index) in items" :key="index">
     <td>{{item.name}}</td>
-    <td>{{item.value}} 元</td>
+    <td>{{item.value}}</td>
   </tr>
 </table>
 
@@ -61,7 +61,7 @@ export default {
 
 <style>
 .table_class{
-  min-width: 260px;
+  width: 100%;
   margin: 0 auto;
 }
 
