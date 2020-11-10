@@ -8,6 +8,8 @@
     placeholder="标题"
   />
 
+  <van-switch v-model="checked" />
+
 <van-field
   v-model="params.content"
   rows="2"

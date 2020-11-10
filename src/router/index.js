@@ -12,6 +12,10 @@ import Learn from '@/views/mobile/learn.vue';
 import Alladd from '@/views/mobile/all/add.vue';
 import Alllist from '@/views/mobile/all/list.vue';
 import Beauty from '@/views/mobile/beauty.vue';
+
+import PlanAdd from '@/views/mobile/plan/add.vue';
+import PlanList from '@/views/mobile/plan/list.vue';
+
 Vue.use(Router)
 
 const routes = [
@@ -82,6 +86,20 @@ const routes = [
         name: 'beauty',
         component: Beauty
     },
+
+    {
+        path: '/planadd',
+        name: 'planadd',
+        component: PlanAdd
+    },
+
+    {
+        path: '/planList',
+        name: 'planList',
+        component: PlanList
+    },
+
+
 ]
 const router = new Router({
     routes

@@ -18,6 +18,11 @@ Vue.use(Col);
 Vue.use(Row);
 
 
+import { Tab, Tabs } from 'vant';
+Vue.use(Tab);
+Vue.use(Tabs);
+
+
 Vue.prototype.axios = axios;
 // axios.defaults.baseURL = "http://101.133.161.125/api/vue"; // 关键步骤–填写后台请求统一的地址
 axios.defaults.baseURL = "http://zhusq.local/api/vue"; // 关键步骤–填写后台请求统一的地址
